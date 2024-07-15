@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+body {
+    background-color: #0f172a;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+footer {
+    position: absolute;
+    color: white;
+    bottom: 0px;
+    margin: 10px;
+}
+footer > h3 > span {
+    background: linear-gradient(to right, #364156, #D66853);
+    background-clip: text;
+    color: transparent;
+}
+a {
+    text-decoration: none;
+    background: linear-gradient(to right, #364156, #D66853);
+    background-clip: text;
+    color: transparent;
+}
+img {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+    margin-top: 10px;
+    transition: all 1s ease;
+}
+.music-container {
+    width: 375px;
+    height: 600px;
+    border-radius: 16px;
+    transition: all ease 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.music-container:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5),
+    -10px -10px 10px #141f38; 
+}
+/* .music-container.play {
+    animation: boxAnimate 7s ease infinite forwards;
+} */
+.names-btn {
+    display: flex;
+    justify-content: end;
+    gap: 3.5rem;
+    padding: 1rem;
+    align-items: center;
+}
+.names-btn > button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: #1e2d52;
+    border-radius: 50%;
+}
+.names-btn > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#title {
+    color: white;
+}
+#artist {
+    color: grey;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    padding: 2rem; 
+    background-color: #090d18;
+    border-radius: 16px;
+    margin-top: 1rem;
+}
+.navigation > button {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: none;
+    color: white;
+    background-color: rgba(201, 85, 85, 0.5);
+}
+button:hover {
+    opacity: 0.5;
+}
+button {
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 4px;
+    width: 75%;
+    margin: 1rem;
+    margin-bottom: 2.4rem;
+}
+.progress {
+    background-color: #fe8daa;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+@keyframes boxAnimate {
+    0% {
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5),
+    -10px -10px 10px #141f38;  
+    }
+    25% {
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5),
+    -10px -10px 10px #1d3979;  
+    }
+    50% {
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5),
+    -10px -10px 10px #4865a7;  
+    }
+    75% {
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5),
+    -10px -10px 10px #2f66e9;  
+    }
+    100% {
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.5),
+    -10px -10px 10px #141f38;  
+    }
+}

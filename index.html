@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+<body>
+    <div class="container">
+        <div class="music-container play">
+            <div class="img-container">
+                <img src="" alt="" id="cover" class="fa-backward animate__animated animate__fadeIn">
+            </div>
+    
+            <div class="names-btn">
+                <button class="fa-solid fa-shuffle" id="shuffle"></button>
+                <div class="music-info">
+                    <h2 id="title">Specialz</h2>
+                    <p id="artist">King Gnu</p>
+                </div>
+                <button class="fa-solid fa-heart" id="heart"></button>
+            </div>
+    
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+    
+            <audio src="" id="audio"></audio>
+    
+            <div class="navigation">
+                <button id="prev" class="fa-solid fa-backward"></button>
+                <button id="play" class="fa-solid fa-play"></button>
+                <button id="next" class="fa-solid fa-forward"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Made By: <span>Mike Dacanay</span></h3>
+        <h5>Github: <a href="https://github.com/Mikepogi2">Mikepogi2</a></h5>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
