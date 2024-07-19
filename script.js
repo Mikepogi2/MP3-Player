@@ -190,13 +190,5 @@ shuffle.addEventListener('click', () => {
     console.log(isShuffle)
 })
 
-selectBtn.addEventListener('click', () => {
-    const selectedValue = select.value
-    console.log(selectedValue)
-    index = selectedValue
-    loadSong(songs[index])
-})
-
 // Initial Load Song in DOM
 loadSong(songs[index])
-listSong()
