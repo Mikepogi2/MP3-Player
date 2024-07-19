@@ -1,10 +1,13 @@
-
 const musicContainer = document.querySelector('.music-container')
 const playBtn = document.querySelector('#play')
 const prevBtn = document.querySelector('#prev')
 const nextBtn = document.querySelector('#next')
+const selectBtn = document.querySelector('.selectBtn')
+const select = document.querySelector('#select')
 const audio = document.querySelector('#audio')
 const progress = document.querySelector('.progress')
+let end = document.querySelector('.end')
+let start = document.querySelector('.start')
 const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const artist = document.querySelector('#artist')
@@ -13,7 +16,6 @@ const shuffle = document.querySelector('#shuffle')
 const heart = document.querySelector('#heart')
 let isPlaying = false
 let isShuffle = false
-
 
 // Song titles
 const songs = [
@@ -44,13 +46,14 @@ const songs = [
 ]
 
 // Track Songs
-let index = 1
+let index = 0
 
 const styleElement = document.createElement('style');
 document.head.appendChild(styleElement);
 
-// Update song
-const loadSong = (song) => {
+// Update song / List Songs
+
+const loadSong = (song, e) => {
     title.innerText = song.title
     artist.innerText = song.artist
     audio.src = song.audio
@@ -130,6 +133,8 @@ const updateProgress = (e) => {
     const progressPercent = (currentTime / duration) * 100
     progress.style.width = `${progressPercent}%`;
 
+    start.innerText = formatTime(currentTime);
+
     if (progressPercent == 100) {
         nextSong()
     }
@@ -142,7 +147,14 @@ const setProgress = (e) => {
     audio.currentTime = (clickX / width) * duration
 };
 
-//Events
+// Format time helper function
+const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
+// Event listeners
 playBtn.addEventListener('click', () => {
     if(isPlaying == false) {
         playSong()
@@ -161,6 +173,9 @@ prevBtn.addEventListener('click', () => {
 })
 
 audio.addEventListener('timeupdate', updateProgress)
+audio.addEventListener('loadedmetadata', () => {
+    end.innerText = formatTime(audio.duration);
+});
 
 progressContainer.addEventListener('click', setProgress)
 
@@ -175,5 +190,13 @@ shuffle.addEventListener('click', () => {
     console.log(isShuffle)
 })
 
+selectBtn.addEventListener('click', () => {
+    const selectedValue = select.value
+    console.log(selectedValue)
+    index = selectedValue
+    loadSong(songs[index])
+})
+
 // Initial Load Song in DOM
 loadSong(songs[index])
+listSong()
